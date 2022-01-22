@@ -10,6 +10,12 @@ body {
     font-family: "Open Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
+
+.mapouter {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .text-muted {
     color: #777;
     margin: 5px;
