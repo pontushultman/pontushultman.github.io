@@ -664,7 +664,7 @@ section h3.section-subheading {
 
 section#kontakt {
     background-color: #222;
-    background-image: url("./img/header_img");
+    background-image: url("/img/header_img");
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -766,12 +766,12 @@ ul.social-buttons {
 }
 
 .se{
-    background-image: url("../flags/se.png");
+    background-image: url("/flags/se.png");
     background-size: cover;
 }
 
 .en{
-    background-image: url("../flags/en.png");
+    background-image: url("/flags/en.png");
     background-size: cover;
 }
 
