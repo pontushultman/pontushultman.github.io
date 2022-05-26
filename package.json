@@ -20,7 +20,7 @@
     "typescript": "^4.6.4",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://pontushultman.github.io/pontushultman.github.io.git/",
+  "homepage": "https://pontushultman.github.io/pontushultman.github.io",
 "scripts": {
  "predeploy": "npm run build",
  "deploy": "gh-pages -d build", 
