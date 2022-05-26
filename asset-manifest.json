@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/pontushultman.github.io/static/css/main.96681054.css",
-    "main.js": "/pontushultman.github.io/static/js/main.96051bb4.js",
-    "static/js/787.553531fe.chunk.js": "/pontushultman.github.io/static/js/787.553531fe.chunk.js",
+    "main.js": "/pontushultman.github.io/static/js/main.1f862594.js",
+    "static/js/787.b35e9fd9.chunk.js": "/pontushultman.github.io/static/js/787.b35e9fd9.chunk.js",
     "static/media/photo-1641371084529-1f4c8d40cea3.webp": "/pontushultman.github.io/static/media/photo-1641371084529-1f4c8d40cea3.b24cf01a675abf49e390.webp",
     "index.html": "/pontushultman.github.io/index.html",
     "main.96681054.css.map": "/pontushultman.github.io/static/css/main.96681054.css.map",
-    "main.96051bb4.js.map": "/pontushultman.github.io/static/js/main.96051bb4.js.map",
-    "787.553531fe.chunk.js.map": "/pontushultman.github.io/static/js/787.553531fe.chunk.js.map"
+    "main.1f862594.js.map": "/pontushultman.github.io/static/js/main.1f862594.js.map",
+    "787.b35e9fd9.chunk.js.map": "/pontushultman.github.io/static/js/787.b35e9fd9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.96681054.css",
-    "static/js/main.96051bb4.js"
+    "static/js/main.1f862594.js"
   ]
 }
