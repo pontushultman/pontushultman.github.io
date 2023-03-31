@@ -26,13 +26,13 @@ function App() {
 
       if (daysDifference >= 0 && daysDifference < 4) {
         const remaining = 3 - daysDifference;
-        setStatus(`Free, ${remaining} days remaining until work`);
+        setStatus(`Lars is free, ${remaining} days remaining until work`);
         setBackgroundColor("green");
       } else {
         const workDay = ((daysDifference - 1) + 6) % 6;
         const workDaySchedule = workHours[workDay];
         setStatus(
-          `Lars is currently working, day ${workDay + 1} out of 6 (${workDaySchedule.start}:00-${workDaySchedule.end}:00)`
+          `Lars is working today, day ${workDay + 1} out of 6 (${workDaySchedule.start}:00-${workDaySchedule.end}:00)`
         );
 
         setBackgroundColor("#B22222");
