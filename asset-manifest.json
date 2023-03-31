@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/jobbar-lars/static/css/main.3237a1d5.css",
-    "main.js": "/jobbar-lars/static/js/main.81d10158.js",
-    "static/js/787.3585ed45.chunk.js": "/jobbar-lars/static/js/787.3585ed45.chunk.js",
-    "index.html": "/jobbar-lars/index.html",
-    "main.3237a1d5.css.map": "/jobbar-lars/static/css/main.3237a1d5.css.map",
-    "main.81d10158.js.map": "/jobbar-lars/static/js/main.81d10158.js.map",
-    "787.3585ed45.chunk.js.map": "/jobbar-lars/static/js/787.3585ed45.chunk.js.map"
+    "main.css": "/static/css/main.3237a1d5.css",
+    "main.js": "/static/js/main.dc15c46c.js",
+    "static/js/787.3585ed45.chunk.js": "/static/js/787.3585ed45.chunk.js",
+    "index.html": "/index.html",
+    "main.3237a1d5.css.map": "/static/css/main.3237a1d5.css.map",
+    "main.dc15c46c.js.map": "/static/js/main.dc15c46c.js.map",
+    "787.3585ed45.chunk.js.map": "/static/js/787.3585ed45.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3237a1d5.css",
-    "static/js/main.81d10158.js"
+    "static/js/main.dc15c46c.js"
   ]
 }
