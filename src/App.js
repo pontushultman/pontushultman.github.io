@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import SnakeGameBoard from "./SnakeGameBoard";
 
 const MORNING = { start: 6, end: 14 };
 const AFTERNOON = { start: 14, end: 22 };
@@ -51,8 +52,13 @@ function App() {
 
   return (
     <div className="App" style={{ backgroundColor }}>
-      <h1>{status}</h1>
+    <div className="header">
+      <h1 color='white'>{status}</h1>
     </div>
+    <div className="snake-board">
+      <SnakeGameBoard />
+    </div>
+  </div>
   );
 }
 
