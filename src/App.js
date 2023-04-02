@@ -13,20 +13,37 @@ function getDateWithoutTime(date) {
   return new Date(date.getFullYear(), date.getMonth(), date.getDate());
 }
 
-function getCurrentCycleDay(dateString) {
+function getCurrentCycleDay(startDate, inputDate) {
   const cycleLength = 10;
-  const startDate = getDateWithoutTime(new Date("2023-03-27"));
-  const inputDate = getDateWithoutTime(new Date(dateString));
 
   const diffInMilliseconds = inputDate - startDate;
   const diffInDays = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
+
+  if(inputDate < startDate) {
+    console.log("HELLO")
+    return diffInDays
+  }
+
   const currentCycleDay = Math.abs((diffInDays % cycleLength));
 
   return currentCycleDay;
 }
 
 export function calculateStatus(currentDate) {
-  const daysIntoCycle = getCurrentCycleDay(currentDate);
+
+  const inputDate = getDateWithoutTime(new Date(currentDate));
+
+  const startDate = getDateWithoutTime(new Date("2023-04-14"));
+  const daysIntoCycle = getCurrentCycleDay(startDate, currentDate);
+
+
+  console.log(daysIntoCycle)
+
+  if(inputDate < startDate) {
+    console.log("I came here")
+    return { status: `Lars is free, ${Math.abs(daysIntoCycle)} days remaining untill work.`, backgroundColor: "green" };
+  }
+
 
   if (daysIntoCycle >= 6 && daysIntoCycle < 10) {
     const day = Math.abs(10 - daysIntoCycle - FREEDAYS) + 1;
