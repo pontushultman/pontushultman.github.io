@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material"
 import ReactCountryFlag from "react-country-flag"
 import { CountryType } from "../FlagsOfTheWorldRoute"
 import { GTextField } from "../../../components/input-components/TextField"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { isMatch } from "./utils"
 
 type FlagCardProps = {
@@ -22,6 +22,14 @@ export const FlagCard = ({
   correct
 }: FlagCardProps) => {
   const [value, setValue] = useState("")
+
+  useEffect(() => {
+    if (selected) {
+      ref.current?.focus()
+    }
+  }, [country, selected])
+
+  const ref = useRef<HTMLInputElement>(null)
 
   const handleChange = (val: string) => {
     setValue(val)
@@ -53,10 +61,14 @@ export const FlagCard = ({
         </Box>
       ) : (
         <GTextField
-          sx={{
-            fontSize: 6,
-            height: "40px"
+          InputProps={{
+            sx: {
+              fontSize: 8,
+              height: "30px"
+            }
           }}
+          inputRef={ref}
+          onClick={(e) => onClick(country)}
           size="small"
           value={value}
           onChange={(e) => handleChange(e.target.value)}
