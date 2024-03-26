@@ -9,6 +9,8 @@ export type CountryType = {
   code: string
 }
 
+export type GameState = "reset" | "give up" | "active"
+
 export const FlagsOfTheWorldRoute = () => {
   const [score, setScore] = useState(0)
   const [selectedCountry, setSelectedCountry] = useState<CountryType | null>(
@@ -16,8 +18,7 @@ export const FlagsOfTheWorldRoute = () => {
   )
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [countries, setCountries] = useState<CountryType[]>([])
-
-  console.log(selectedCountry)
+  const [state, setState] = useState<GameState>("active")
 
   const [correctCountries, setCorrectCountries] = useState<
     Record<string, boolean>
@@ -111,7 +112,11 @@ export const FlagsOfTheWorldRoute = () => {
         marginX: "25%"
       }}
     >
-      <FlagsOfTheWorldHeader selectedCountry={selectedCountry} score={score} />
+      <FlagsOfTheWorldHeader
+        state={state}
+        onGameStateChange={(state) => setState(state)}
+        score={score}
+      />
       <Box
         display="flex"
         flexDirection="row"
@@ -124,6 +129,7 @@ export const FlagsOfTheWorldRoute = () => {
           <Box marginX={1}>
             <FlagCard
               key={c.code}
+              state={state}
               country={c}
               selected={selectedCountry?.code === c.code}
               onClick={(c) => handleClick(c, i)}

@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material"
 
 import ReactCountryFlag from "react-country-flag"
-import { CountryType } from "../FlagsOfTheWorldRoute"
+import { CountryType, GameState } from "../FlagsOfTheWorldRoute"
 import { GTextField } from "../../../components/input-components/TextField"
 import { useEffect, useRef, useState } from "react"
 import { isMatch } from "./utils"
@@ -12,6 +12,7 @@ type FlagCardProps = {
   onClick: (country: CountryType) => void
   onCorrect: () => void
   correct: boolean
+  state: GameState
 }
 
 export const FlagCard = ({
@@ -19,7 +20,8 @@ export const FlagCard = ({
   selected,
   onClick,
   onCorrect,
-  correct
+  correct,
+  state
 }: FlagCardProps) => {
   const [value, setValue] = useState("")
 
@@ -52,7 +54,7 @@ export const FlagCard = ({
         svg
         onClick={() => onClick(country)}
       />
-      {correct ? (
+      {correct || state === "give up" ? (
         <Box display="flex" flexDirection="row" alignItems="center">
           ✅
           <Typography fontSize={8}>

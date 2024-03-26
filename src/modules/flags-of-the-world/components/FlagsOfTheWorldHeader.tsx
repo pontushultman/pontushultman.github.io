@@ -1,26 +1,42 @@
-import { Box } from "@mui/material"
-import { useEffect, useRef } from "react"
+import { Box, Button } from "@mui/material"
 import { countryCodes } from "../../../constants/Country"
-import { CountryType } from "../FlagsOfTheWorldRoute"
+import { Timer } from "./Timer"
+import { GameState } from "../FlagsOfTheWorldRoute"
 
 type FlagsOfTheWorldHeaderProps = {
-  selectedCountry: CountryType | null
   score: number
+  onGameStateChange: (state: GameState) => void
+  state: GameState
 }
 
 export const FlagsOfTheWorldHeader = ({
-  selectedCountry,
-  score
+  score,
+  onGameStateChange,
+  state
 }: FlagsOfTheWorldHeaderProps) => {
-  const ref = useRef<HTMLInputElement>(null)
-
-  useEffect(() => {
-    ref.current?.focus()
-  }, [selectedCountry])
+  const handleReset = () => {
+    onGameStateChange(
+      state === "active" ? "give up" : state === "give up" ? "reset" : "give up"
+    )
+  }
 
   return (
-    <Box width={"100%"} display="flex" flexDirection="row" alignItems="center">
+    <Box
+      width={"100%"}
+      display="flex"
+      flexDirection="row"
+      alignItems="center"
+      marginLeft={"20px"}
+    >
       <Box>{`${score}/${countryCodes.length}`}</Box>
+      <Button onClick={handleReset}>
+        {state === "active"
+          ? "Give up"
+          : state === "give up"
+          ? "Start"
+          : "Give up"}
+      </Button>
+      <Timer state={state} />
     </Box>
   )
 }
