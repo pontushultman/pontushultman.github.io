@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.vs/slnx.sqlite
+.vs/app/FileContentIndex/f4cc95fb-4ffb-413b-8db2-95d3b59b7e09.vsidx
+.vs/app/v17/.wsuo
+.vs/app/FileContentIndex/read.lock
+.vs/slnx.sqlite
+.vs/app/v17/.wsuo

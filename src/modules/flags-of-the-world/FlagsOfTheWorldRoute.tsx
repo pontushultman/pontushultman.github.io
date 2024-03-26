@@ -5,7 +5,7 @@ import { FlagCard } from "./components/FlagCard"
 import { FlagsOfTheWorldHeader } from "./components/FlagsOfTheWorldHeader"
 
 export type CountryType = {
-  name: string
+  name: string[] | string
   code: string
 }
 
@@ -16,6 +16,8 @@ export const FlagsOfTheWorldRoute = () => {
   )
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [countries, setCountries] = useState<CountryType[]>([])
+
+  console.log(selectedCountry)
 
   const [correctCountries, setCorrectCountries] = useState<
     Record<string, boolean>
@@ -75,15 +77,17 @@ export const FlagsOfTheWorldRoute = () => {
 
   useEffect(() => {
     const countries = countryCodes.map((code) => {
+      console.log("code", code)
       const countryName = getCountryName(code)
 
+      console.log("countryName", countryName)
       const country: CountryType = {
         name: countryName || "",
         code
       }
       return country
     })
-    setCountries(countries)
+    setCountries(countries.sort(() => Math.random() - 0.5))
   }, [])
 
   const handleClick = (country: CountryType, index: number) => {
@@ -97,7 +101,6 @@ export const FlagsOfTheWorldRoute = () => {
       setScore(score + 1)
 
       const nextCountry = getNextNotCorrectedCountry()
-      console.log(nextCountry)
       setSelectedCountry(nextCountry)
     }
   }
@@ -108,11 +111,7 @@ export const FlagsOfTheWorldRoute = () => {
         marginX: "25%"
       }}
     >
-      <FlagsOfTheWorldHeader
-        selectedCountry={selectedCountry}
-        score={score}
-        onCorrect={handleCorrect}
-      />
+      <FlagsOfTheWorldHeader selectedCountry={selectedCountry} score={score} />
       <Box
         display="flex"
         flexDirection="row"
@@ -129,6 +128,7 @@ export const FlagsOfTheWorldRoute = () => {
               selected={selectedCountry?.code === c.code}
               onClick={(c) => handleClick(c, i)}
               correct={correctCountries[c.code]}
+              onCorrect={handleCorrect}
             />
           </Box>
         ))}
